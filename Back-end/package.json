@@ -1,0 +1,33 @@
+{
+  "name": "quit",
+  "version": "1.0.0",
+  "description": "Projeto de aprendizado na Tera\r Projeto seria um e-commerce de produtos esportivos,voltado para praticantes de Corrida, sendo elas de trail running ou corrida no meio urbano.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "Gustavo Wornes",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.2",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "dotenv-safe": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-middleware": "^3.4.2",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.5",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
