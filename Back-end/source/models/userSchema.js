@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
         minlength:[3,'Nome muito curto'],
-        maxlength:[20,"Não pode exeder 20 Caracteres"]
+        maxlength:[40,"Não pode exeder 20 Caracteres"]
     },
     sobrenome:{
         type:String,
