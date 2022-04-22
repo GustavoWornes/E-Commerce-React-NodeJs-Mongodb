@@ -2,3 +2,60 @@
      width:540px;
     height:393px;
 }
+
+.texto-descricao{
+    /* Texto de descrição do produto abaixo da tabela de informaçoes de fabrica */
+    font-family:monospace;
+    font-size:x-large;
+    padding: 50px;
+}
+#a1b2c3{
+    /* Id da div de descrição com preço do produto */
+    padding-top: 15%;
+    margin-left: 220px;
+    text-align: left;
+    line-height:30px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+#testeprodutos{
+    border-radius: 1px;
+}
+
+
+
+
+#inputDoTamanho{
+/* Input da definição de tamanho */
+    border-radius: 20px;
+    
+    
+}
+
+.table{
+    background-color: rgb(255, 255, 255);
+    border:1px  black;
+    width:100%;
+    padding:20px
+}
+.lista{
+    display: inline-block;
+    position: relative;
+    
+    
+   
+}
+
+.col-sm-4{
+    height: 516px;
+    text-align: center;
+    width: 860px;
+}
+.col-sm-4 img{
+    margin-top: 70px;
+
+}
+.carousel-inner img{
+    max-width: 500px;
+    margin-top: 45px;
+}

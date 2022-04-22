@@ -1,6 +1,6 @@
 import React from "react"
 import { useCart } from "../../contexts/auth"
-
+import style from "./style.css"
 import teste from "../Home/img/Produto 1.png"
 const CarrinhoUser = () => {
  const cart = useCart()
@@ -33,7 +33,9 @@ const CarrinhoUser = () => {
                   return(
                 <tr key={key}>
                   <th className="item">
-                    <img src={product.img_um} alt="Imagem da lateral do tenis sonic 4 balance m da cor vermelha " width="150px" height="auto" />
+                    <img src={product.img_um} alt={product.descricao} 
+                    width="150px" height="auto"
+                     />
                     
                   </th>
                   <th>

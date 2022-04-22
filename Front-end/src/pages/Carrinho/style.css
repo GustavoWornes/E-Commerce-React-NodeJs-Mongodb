@@ -1,0 +1,27 @@
+#col-sm-3{
+    
+}
+
+
+.item{
+    width: 300px;
+} 
+
+.container.container-carrinho{
+    padding-top: 30px;
+margin: 0;
+}
+.container.container-carrinho p{
+   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: small;
+    
+}
+.container.container-carrinho .form-check{
+    padding: 5px;
+}
+.container.container-carrinho button{
+    border-radius: 10px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    width: 300px;
+}

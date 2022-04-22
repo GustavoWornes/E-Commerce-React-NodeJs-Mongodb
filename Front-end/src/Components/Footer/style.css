@@ -1,0 +1,22 @@
+
+   #duvidaCss{
+    background-color:#badad4; 
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+   #Copyright{
+    background-color:#000000;
+    color:rgb(225, 231, 236)
+}
+#informacoes{
+    background-color:rgb(23,23,23);
+    color:rgb(225, 231, 236);
+    padding-top: 20px;
+}
+#i{
+    background-color:rgb(33,33,33) ;
+}
+#comprar{
+   background-color: rgb(33,33,33);
+   border-radius: 50px;
+}

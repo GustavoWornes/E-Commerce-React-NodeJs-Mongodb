@@ -10,7 +10,9 @@ const index = (request,response) =>{
 }
 const login = async (request,response) =>{
     try{
-        response.render('login')
+        response.status(500).json({
+            message:error.message
+        })
     }catch(error){
         response.status(500).json({
             message:error.message

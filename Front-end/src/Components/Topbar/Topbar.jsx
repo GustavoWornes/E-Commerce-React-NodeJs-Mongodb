@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext, useCart } from "../../contexts/auth";
 import perfil from "./perfil.png"
 import carinho from "./shopping-cart_icon-icons.com_69460.png"
+import style from "./style.css"
 const Topbar = () => {
   
   const { logout } = useContext(CartContext)

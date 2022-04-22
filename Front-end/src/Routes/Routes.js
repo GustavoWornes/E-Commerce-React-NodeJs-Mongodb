@@ -5,15 +5,17 @@ import {
     Switch,
     Redirect,useParams
 } from "react-router-dom"
+
+
 import HomePage from '../pages/Home'
 import LoginUser from '../pages/Login'
 import PageProduto from '../pages/PageProduto'
 import PageCarrinho from '../pages/Carrinho'
-import CadastroUsuario from '../pages/CadastroUsuario'
 import Page404 from "../pages/404/Page404";
 import { utils } from "../utils"
 import Perfil from "../pages/Perfil"
 import { CartProvider, CartContext } from "../contexts/auth"
+import Cadastro from "../pages/Cadastro"
 
 
 const AppRoutes = () => {
@@ -47,7 +49,7 @@ const AppRoutes = () => {
                         <PageProduto />
                     </Route>
                     <Route path={'/cadastro'}>
-                        <CadastroUsuario />
+                        <Cadastro />
                     </Route>
                     <Route>
                         <Page404 />

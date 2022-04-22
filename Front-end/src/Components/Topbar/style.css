@@ -1,0 +1,21 @@
+
+#teste2{
+    padding: 15px;
+  }
+  
+.nav-link dropdown{
+    padding:10px;
+
+}
+.btn-nav{
+    position: relative; 
+    margin-right: 20%;
+}
+/*Inicio Menu Dropdown */
+.dropdown-menu[data-bs-popper]{
+    right: 0;
+}
+
+.dropdown-menu a{
+ color: rgb(165, 165, 165);
+}
