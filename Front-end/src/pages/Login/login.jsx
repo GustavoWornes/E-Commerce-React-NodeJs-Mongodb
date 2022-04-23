@@ -40,7 +40,7 @@ const PageLogin = () => {
           <Col>
             <Form onSubmit={handleSubmit}>  
             <p>{String(authenticated)}</p>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3" controlId="formBicEmail" id="controlId">
                 <Form.Label>Email: *</Form.Label>
                 <Form.Control type="email" className="form-control" id="emaillogin" aria-describedby="emailHelp" placeholder="Enter email"
                   onChange={(event) => setEmail(event.target.value)} />

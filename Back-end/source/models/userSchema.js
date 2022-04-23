@@ -59,7 +59,7 @@ const userSchema = new mongoose.Schema({
     },
     token:{
         type:String,
-        default: new token
+        default: 1
     }
 
 })

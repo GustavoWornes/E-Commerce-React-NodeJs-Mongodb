@@ -11,6 +11,7 @@ import {
 } from 'antd';
 
 import 'antd/dist/antd.css';
+import { CadastroUsuario } from '../../Services/services';
 const { Option } = Select;
 
 const formItemLayout = {
@@ -46,27 +47,19 @@ const tailFormItemLayout = {
 
 const FormCadastro = () => {
     const [form] = Form.useForm();
-
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
-    };
-
     
-
-    const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-
-    const onWebsiteChange = (value) => {
-        if (!value) {
-            setAutoCompleteResult([]);
-        } else {
-            setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
-        }
+    const onFinish = async ({name,sobrenome,email,password,cep,logradouro,bairro,uf}) => {
+        return NovoUsuario(name,sobrenome,email,password,cep,logradouro,bairro,uf)
     };
 
-    const websiteOptions = autoCompleteResult.map((website) => ({
-        label: website,
-        value: website,
-    }));
+
+    const NovoUsuario = async (name,sobrenome,email,password,cep,logradouro,bairro,uf) => {
+            const response = await CadastroUsuario(name,sobrenome,email,password,cep,logradouro,bairro,uf)
+            console.log('resposta cadastro',response.data)
+    }
+
+   
+ 
     return (
 
         <Form
@@ -80,12 +73,13 @@ const FormCadastro = () => {
             }}
             scrollToFirstError
         >
-            <Form.Item name="nome"
+            <Form.Item name="name"
                 label="nome"
                 rules={[{
                     required: true,
                     message: 'Nome requerido!',
-                }]}>
+                }]}
+                 >
                 <Input />
             </Form.Item>
 
@@ -115,7 +109,7 @@ const FormCadastro = () => {
             >
                 <Input />
             </Form.Item>
-
+                  
             <Form.Item
                 name="password"
                 label="Password"
@@ -157,6 +151,7 @@ const FormCadastro = () => {
             <Form.Item name="cep"
                 label="cep"
                 rules={[{
+                    
                     required: true,
                     message: 'Não pode deixar em branco !',
                 }]}>

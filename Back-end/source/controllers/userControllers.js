@@ -55,7 +55,7 @@ const createUser = async(request,response) =>{
     const hashedPassword = bcrypt.hashSync(request.body.password, 10)
     /* linha a cima gera um hash com a senha recebida no body da request  */
     request.body.password = hashedPassword
-
+ 
     try {
         const newUser = new userSchema({
             _id: new mongoose.Types.ObjectId(),
@@ -70,7 +70,7 @@ const createUser = async(request,response) =>{
             uf:request.body.uf,
             createDate:request.body.createDate
         })
-
+ 
         const savedUser = await newUser.save()
 
         response.status(200).json({
