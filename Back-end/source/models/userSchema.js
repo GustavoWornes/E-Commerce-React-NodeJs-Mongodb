@@ -9,12 +9,12 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
         minlength:[3,'Nome muito curto'],
-        maxlength:[40,"Não pode exeder 20 Caracteres"]
+        maxlength:[20,"Não pode exceder 20 Caracteres"]
     },
     sobrenome:{
         type:String,
         required:true,
-        minlength:3,
+        minlength:5,
         maxlength:20,
         
     },
@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
         minlength:5,
-        maxlength:20,
+        maxlength:50,
         unique:true
     },
     password:{
@@ -59,7 +59,7 @@ const userSchema = new mongoose.Schema({
     },
     token:{
         type:String,
-        default: 1
+        default: new String()
     }
 
 })
