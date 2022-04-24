@@ -1,12 +1,12 @@
 import React from "react";
-import { Redirect } from "react-router";
+import { Redirect} from "react-router";
 import { utils } from "../../utils";
-
 
 const PerfilUser = () =>{
     const logout = () => {
         console.log("logout")
         utils.clearLocalStore()
+       
         return <Redirect to="/login"  />
     }
 

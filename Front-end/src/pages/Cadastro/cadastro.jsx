@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
     Form,
     Input,
     Select,
-    Row,
-    Col,
     Checkbox,
     Button,
 
@@ -47,19 +45,19 @@ const tailFormItemLayout = {
 
 const FormCadastro = () => {
     const [form] = Form.useForm();
-    
-    const onFinish = async ({name,sobrenome,email,password,cep,logradouro,bairro,uf}) => {
-        return NovoUsuario(name,sobrenome,email,password,cep,logradouro,bairro,uf)
+
+    const onFinish = async ({ name, sobrenome, email, password, cep, logradouro, bairro, uf }) => {
+        return NovoUsuario(name, sobrenome, email, password, cep, logradouro, bairro, uf)
     };
 
 
-    const NovoUsuario = async (name,sobrenome,email,password,cep,logradouro,bairro,uf) => {
-            const response = await CadastroUsuario(name,sobrenome,email,password,cep,logradouro,bairro,uf)
-            console.log('resposta cadastro',response.data)
+    const NovoUsuario = async (name, sobrenome, email, password, cep, logradouro, bairro, uf) => {
+        const response = await CadastroUsuario(name, sobrenome, email, password, cep, logradouro, bairro, uf)
+        console.log('resposta cadastro', response.data)
     }
 
-   
- 
+
+
     return (
 
         <Form
@@ -74,22 +72,41 @@ const FormCadastro = () => {
             scrollToFirstError
         >
             <Form.Item name="name"
-                label="nome"
+                label="Nome"
                 rules={[{
                     required: true,
                     message: 'Nome requerido!',
-                }]}
-                 >
+                },
+                {
+                    max: 20,
+                    message: 'Nome não pode exceder 20 caracteres',
+                },
+                {
+                    min: 3,
+                    message: 'Nome é muito curto'
+                }
+                ]}
+            >
                 <Input />
             </Form.Item>
 
 
             <Form.Item name="sobrenome"
                 label="Sobrenome"
-                rules={[{
-                    required: true,
-                    message: 'Sobrenome requerido!',
-                }]}>
+                rules={[
+                    {
+                        required: true,
+                        message: 'Sobrenome requerido!'
+                    },
+                    {
+                        min: 5,
+                        message: 'Nome é muito curto'
+                    },
+                    {
+                        max: 20,
+                        message: 'Nome não pode exceder 20 caracteres',
+                    },
+                ]}>
                 <Input />
             </Form.Item>
 
@@ -99,17 +116,25 @@ const FormCadastro = () => {
                 rules={[
                     {
                         type: 'email',
-                        message: 'Esse email não é valido!',
+                        message: 'Email inválido',
                     },
                     {
                         required: true,
                         message: 'Coloque seu email!',
                     },
+                    {
+                        min: 5,
+                        message: 'Email é muito curto'
+                    },
+                    {
+                        max: 50,
+                        message: 'Esse email excedeu o número de caracteres'
+                    }
                 ]}
             >
                 <Input />
             </Form.Item>
-                  
+
             <Form.Item
                 name="password"
                 label="Password"
@@ -118,6 +143,10 @@ const FormCadastro = () => {
                         required: true,
                         message: 'Password requerido!',
                     },
+                    {
+                        min: 7,
+                        message: 'Senha deve haver um minimo de 7 caracteres'
+                    }
                 ]}
                 hasFeedback
             >
@@ -149,16 +178,25 @@ const FormCadastro = () => {
                 <Input.Password />
             </Form.Item>
             <Form.Item name="cep"
-                label="cep"
+                label="Cep"
                 rules={[{
-                    
+
                     required: true,
                     message: 'Não pode deixar em branco !',
-                }]}>
+                },
+                {
+                    min: 7,
+                    message: 'Cep inválido'
+                },
+                {
+                    max: 10,
+                    message: 'Cep inválido'
+                }
+                ]}>
                 <Input />
             </Form.Item>
             <Form.Item name="logradouro"
-                label="logradouro"
+                label="Logradouro"
                 rules={[{
                     required: true,
                     message: 'Não pode deixar em branco !',
@@ -166,7 +204,7 @@ const FormCadastro = () => {
                 <Input />
             </Form.Item>
             <Form.Item name="bairro"
-                label="bairro"
+                label="Bairro"
                 rules={[{
                     required: true,
                     message: ' Não pode deixar em branco !',
@@ -174,7 +212,7 @@ const FormCadastro = () => {
                 <Input />
             </Form.Item>
             <Form.Item name="localidade"
-                label="localidade"
+                label="Localidade"
                 rules={[{
                     required: true,
                     message: ' Não pode deixar em branco !',
@@ -182,7 +220,7 @@ const FormCadastro = () => {
                 <Input />
             </Form.Item>
             <Form.Item name="uf"
-                label="uf"
+                label="Uf"
                 rules={[{
                     required: true,
                     message: ' Não pode deixar em branco !',
@@ -230,7 +268,7 @@ const FormCadastro = () => {
 
 
 
-            <Form.Item label="Captcha" extra="We must make sure that your are a human.">
+            {/* <Form.Item label="Captcha" extra="We must make sure that your are a human.">
                 <Row gutter={8}>
                     <Col span={12}>
                         <Form.Item
@@ -250,7 +288,7 @@ const FormCadastro = () => {
                         <Button>Get captcha</Button>
                     </Col>
                 </Row>
-            </Form.Item>
+            </Form.Item> */}
 
             <Form.Item
                 name="agreement"
@@ -277,4 +315,4 @@ const FormCadastro = () => {
     );
 };
 
-export default () => <FormCadastro />;
+export default FormCadastro

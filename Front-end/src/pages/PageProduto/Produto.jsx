@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { matchPath, useParams } from "react-router";
-import {api, searchProduct} from "../../Services/services"
-import { utils } from "../../utils";
-import { CartContext, useCart } from "../../contexts/auth";
-import {Style}  from "./style.css"
+import { useParams } from "react-router";
+import {api} from "../../Services/services"
+import { CartContext } from "../../contexts/auth";
 const BodyPageProduto = () =>{
   const [product,setProduct] = useState([]);
   const {id} = useParams()

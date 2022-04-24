@@ -24,7 +24,7 @@ const PageLogin = () => {
     */
     api.defaults.headers.Authorization = `Bearer ${token}`
 
-    return <Redirect to="/" />
+    return <Redirect to="/product/6257c0db5cbb58dd34b74d07" />
   }
 
   const handleSubmit = (event) => {

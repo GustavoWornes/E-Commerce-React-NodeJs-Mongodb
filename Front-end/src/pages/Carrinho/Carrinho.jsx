@@ -1,7 +1,5 @@
 import React from "react"
 import { useCart } from "../../contexts/auth"
-import style from "./style.css"
-import teste from "../Home/img/Produto 1.png"
 const CarrinhoUser = () => {
  const cart = useCart()
   return (
