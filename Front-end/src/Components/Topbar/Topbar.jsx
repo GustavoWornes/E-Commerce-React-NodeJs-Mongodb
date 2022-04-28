@@ -4,8 +4,9 @@ import { CartContext, useCart } from "../../contexts/auth";
 import perfil from "./perfil.png"
 import carinho from "./shopping-cart_icon-icons.com_69460.png"
 import style from "./style.css"
+import { utils } from "../../utils";
 const Topbar = () => {
-  
+  const userId = utils.getIdUser()
   const { logout } = useContext(CartContext)
   const HandleLogout = () => {
     logout()
@@ -68,10 +69,12 @@ const Topbar = () => {
           </div>
         </div>
       </div>
-      <Link to="/perfil"><button name="Perfil do usuario" className="btn btn-link"><img src={perfil} alt="Perfil" /></button></Link>
+      <Link to={{pathname: `/perfil/${userId}`}}><button name="Perfil do usuario" className="btn btn-link"><img src={perfil} alt="Perfil" /></button></Link>
       <Link to="/carrinho"><button name="Carrinho de compras" className="btn btn-link"><img src={carinho} alt="Figura de um carrinho de supermercado" /></button></Link>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#expandirOrMinizar" aria-controls="expandirOrMinizar" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon" />
+
+  
       </button>
     </nav>
   )
