@@ -65,10 +65,7 @@ const FormCadastro = () => {
             form={form}
             name="register"
             onFinish={onFinish}
-            initialValues={{
-                residence: ['zhejiang', 'hangzhou', 'xihu'],
-                prefix: '86',
-            }}
+            
             scrollToFirstError
         >
             <Form.Item name="name"
@@ -107,7 +104,7 @@ const FormCadastro = () => {
                         message: 'Nome não pode exceder 20 caracteres',
                     },
                 ]}>
-                <Input />
+                <Input /> 
             </Form.Item>
 
             <Form.Item

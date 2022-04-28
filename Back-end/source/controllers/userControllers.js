@@ -30,9 +30,9 @@ const criarConta = async (request,response) =>{
 }
 
 /* Getall mostra todos usuarios registrados no momento */
-const getAll = async (request,response) => {
+const getUser = async (request,response) => {
     try{
-        const user = await userSchema.find()
+        const user = await userSchema.findById(request.params.id)
         response.status(200).json(user);
     }catch (error) {
         response.status(500).json({
@@ -126,7 +126,7 @@ const logar = async (request,response) =>{
 
 module.exports = {
     index,
-    getAll,
+    getUser,
     createUser,
     login,
     criarConta,

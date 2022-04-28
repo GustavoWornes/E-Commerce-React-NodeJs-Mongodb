@@ -28,23 +28,23 @@ console.log("console.log name",product.name)
           <div className="row">
             <div className="col-sm-1">
               <div className="miniproduto">
-                <img id="Img-um" alt="Imagem da lateral do tenis sonic 4 balance m da cor vermelha " src={`${product.img_um}`} />
+                <img id="Img-um" alt={product.name} src={`${product.img_um}`} />
               </div>
               <div className="miniproduto">
-                <img id="Img-dois" alt="imagem da diagonal da frente do tenis sonic 4 balance m da cor vermelha" src={`${product.img_dois}`}/>
+                <img id="Img-dois" alt={product.name} src={`${product.img_dois}`}/>
               </div>
               <div className="miniproduto">
-                <img id="Img-tres" alt="imagem da dimenção de cima do tenis sonic 4 balance m da cor vermelha" src={`${product.img_tres}`} />
+                <img id="Img-tres" alt={product.name} src={`${product.img_tres}`} />
               </div>
               <div className="miniproduto">
-                <img id="Img-quatro" alt="imagem da parte de baixo do tenis sonic 4 balance m da cor vermelha" src={`${product.img_quatro}`}/>
+                <img id="Img-quatro" alt={product.name} src={`${product.img_quatro}`}/>
               </div>
               <div className="miniproduto">
-                <img id="Img-cinco" alt="imagem do tenis sonic 4 balance de tras sendo ele de cor vermelha" src={`${product.img_cinco}`}/>
+                <img id="Img-cinco" alt={product.name} src={`${product.img_cinco}`}/>
               </div>
             </div>
             <div className="col-sm-7">
-              <img  src={`${product.img_principal}`}  id="imagem" />
+              <img  src={`${product.img_principal}`} alt={product.name} id="imagem" />
             </div>
             {/* <div class="w-100"></div>
                 usado para separar divs

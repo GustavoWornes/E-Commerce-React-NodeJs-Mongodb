@@ -1,10 +1,9 @@
-import React, { useContext } from "react"
+import React from "react"
 import {
     BrowserRouter as Router,
     Route,
     Switch,
-    Redirect,useParams
-} from "react-router-dom"
+    Redirect} from "react-router-dom"
 
 
 import HomePage from '../pages/Home'
@@ -14,7 +13,7 @@ import PageCarrinho from '../pages/Carrinho'
 import Page404 from "../pages/404/Page404";
 import { utils } from "../utils"
 import Perfil from "../pages/Perfil"
-import { CartProvider, CartContext } from "../contexts/auth"
+import { CartProvider } from "../contexts/auth"
 import Cadastro from "../pages/Cadastro"
 
 
@@ -42,7 +41,7 @@ const AppRoutes = () => {
                     <Route path={'/carrinho'} >
                         <Private><PageCarrinho /></Private>
                     </Route>
-                    <Route path={'/perfil'}>
+                    <Route path={'/perfil'}  search="?:id">
                         <Private><Perfil /></Private>
                     </Route>
                     <Route path={'/product/:id'}>

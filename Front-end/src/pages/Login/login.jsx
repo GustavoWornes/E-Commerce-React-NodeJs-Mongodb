@@ -15,8 +15,9 @@ const PageLogin = () => {
     const response = await createSession(email, password)
     console.log('login Response', response.data)
     const loggedUser = [response.data.email, response.data.password]
-    const token = response.data.token
-
+    const userId = [response.data._id]
+    const token = [response.data.token]
+    utils.setIdUser(userId)
     utils.setToken(token)
     utils.setUser(loggedUser)
     /* Guardando o usuario no localStore para manter ele logado mesmo recarrecando a pagina 
@@ -24,7 +25,7 @@ const PageLogin = () => {
     */
     api.defaults.headers.Authorization = `Bearer ${token}`
 
-    return <Redirect to="/product/6257c0db5cbb58dd34b74d07" />
+    return <Redirect to="/" />
   }
 
   const handleSubmit = (event) => {

@@ -1,9 +1,16 @@
-
+export const getIdUser =() =>{
+    return localStorage.getItem('userId')
+}
+export const setIdUser = (userId) => {
+    
+    localStorage.setItem('userId', userId)
+}
 
 export const setToken = (token) => {
     
     localStorage.setItem('token', token)
 }
+
 
 export const getToken = () => { 
     return localStorage.getItem('token')
@@ -21,6 +28,7 @@ export const setUser = (loggedUser) => {
 export const clearLocalStore = () => {
    localStorage.removeItem('userLocalStore')
    localStorage.removeItem('token')
+   localStorage.removeItem('userId')
 }
 
 export const getProducInfo = () => {
@@ -37,4 +45,8 @@ export const setIdProduct = (id) =>{
 export const getIdProduct = () =>{
     return localStorage.getItem('id')
 }
+
+
+
+
 

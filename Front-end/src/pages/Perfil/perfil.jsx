@@ -4,10 +4,10 @@ import { utils } from "../../utils";
 
 const PerfilUser = () =>{
     const logout = () => {
-        console.log("logout")
+      
         utils.clearLocalStore()
-       
-        return <Redirect to="/login"  />
+        
+        return <Redirect to="/login" />
     }
 
     return(
