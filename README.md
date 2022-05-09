@@ -16,7 +16,7 @@ onde seria construido um E-Commerce, aonde o Front-end seria feito em React e no
    * [Perfil Do Usuário](#).
   
 ### Dependencies
-##**Back-End**:
+## **Back-End**:
 
  * Express
  * Cors
@@ -24,7 +24,7 @@ onde seria construido um E-Commerce, aonde o Front-end seria feito em React e no
  * Bcrypt
  * Body-parser
 
-##**Front-End**:
+## **Front-End**:
 * Axios
 * React
 * Antd
