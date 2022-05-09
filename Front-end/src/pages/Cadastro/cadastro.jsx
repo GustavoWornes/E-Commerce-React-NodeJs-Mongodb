@@ -4,12 +4,12 @@ import {
     Input,
     Select,
     Checkbox,
-    Button,
-
+    Button
 } from 'antd';
 
 import 'antd/dist/antd.css';
-import { CadastroUsuario } from '../../Services/services';
+import { userRegistration } from '../../Services/services';
+import { utils } from '../../utils';
 const { Option } = Select;
 
 const formItemLayout = {
@@ -47,15 +47,15 @@ const FormCadastro = () => {
     const [form] = Form.useForm();
 
     const onFinish = async ({ name, sobrenome, email, password, cep, logradouro, bairro, uf }) => {
-        return NovoUsuario(name, sobrenome, email, password, cep, logradouro, bairro, uf)
+        return newUser(name, sobrenome, email, password, cep, logradouro, bairro, uf)
     };
 
 
-    const NovoUsuario = async (name, sobrenome, email, password, cep, logradouro, bairro, uf) => {
-        const response = await CadastroUsuario(name, sobrenome, email, password, cep, logradouro, bairro, uf)
+    const newUser = async (name, sobrenome, email, password, cep, logradouro, bairro, uf) => {
+        const response = await userRegistration(name, sobrenome, email, password, cep, logradouro, bairro, uf)
         console.log('resposta cadastro', response.data)
     }
-
+    
 
 
     return (
@@ -67,7 +67,7 @@ const FormCadastro = () => {
             onFinish={onFinish}
             
             scrollToFirstError
-        >
+        ><h1></h1>
             <Form.Item name="name"
                 label="Nome"
                 rules={[{
@@ -175,19 +175,20 @@ const FormCadastro = () => {
                 <Input.Password />
             </Form.Item>
             <Form.Item name="cep"
-                label="Cep"
+                label="Cep "
+                
                 rules={[{
-
+                   
                     required: true,
                     message: 'Não pode deixar em branco !',
                 },
                 {
                     min: 7,
-                    message: 'Cep inválido'
+                    message: 'Cep inválido, Usar Somente numeros'
                 },
                 {
-                    max: 10,
-                    message: 'Cep inválido'
+                    max: 9,
+                    message: 'Cep inválido, Usar Somente numeros'
                 }
                 ]}>
                 <Input />
@@ -303,7 +304,7 @@ const FormCadastro = () => {
                 </Checkbox>
             </Form.Item>
             <Form.Item {...tailFormItemLayout}>
-                <Button type="primary" htmlType="submit">
+                <Button  onClick={() => utils.notificationRegister()} type="primary" htmlType="submit">
                     Register
                 </Button>
             </Form.Item>

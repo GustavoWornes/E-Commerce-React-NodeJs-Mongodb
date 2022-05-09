@@ -2,9 +2,10 @@ import React from "react";
 import { useState, useContext } from "react";
 import { CartContext } from "../../contexts/auth";
 import { utils } from "../../utils";
-import { api, createSession } from "../../Services/services";
-import { Redirect } from "react-router";
+import { createSession } from "../../Services/services";
+import { message } from 'antd';
 import {Form,Button,Container,Row,Col} from 'react-bootstrap'
+import "./style.css"
 const PageLogin = () => {
   const { authenticated } = useContext(CartContext);
   const [email, setEmail] = useState("");
@@ -23,24 +24,36 @@ const PageLogin = () => {
     /* Guardando o usuario no localStore para manter ele logado mesmo recarrecando a pagina 
     e transformando usuario logado em objeto para o localStorre armazenar
     */
-    api.defaults.headers.Authorization = `Bearer ${token}`
-
-    return <Redirect to="/" />
+    openMessage()
+    return 
+     
   }
+
+  const key = 'updatable';
+
+  const openMessage = () => {
+    message.loading({ content: 'Loading...', key });
+    setTimeout(() => {
+      message.success({ content: 'Loaded!', key, duration: 2 });
+      window.location.href = "http://localhost:3000/"
+    }, 1000);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     console.log("submit", { email, password })
+    
     login(email, password)
   }
   return (
     <main>
-      <Container>
+      <Container id={Container}>
         <Row>
+        <elemento className="Container"></elemento>
           <Col>
             <Form onSubmit={handleSubmit}>  
-            <p>{String(authenticated)}</p>
+            
               <Form.Group className="mb-3" controlId="formBicEmail" id="controlId">
                 <Form.Label>Email: *</Form.Label>
                 <Form.Control type="email" className="form-control" id="emaillogin" aria-describedby="emailHelp" placeholder="Enter email"

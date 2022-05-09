@@ -23,9 +23,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.5",
-    "morgan": "^1.10.0",
-    "mysql2": "^2.3.3",
-    "sequelize": "^6.17.0"
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"

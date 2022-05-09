@@ -1,12 +1,20 @@
-
-   #duvidaCss{
+#duvidaCss{
     background-color:#badad4; 
     padding-top: 40px;
     padding-bottom: 40px;
+    margin-top: 150px;
+    margin-bottom: 30px;
   }
    #Copyright{
     background-color:#000000;
     color:rgb(225, 231, 236)
+}
+h2,p{
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h2{
+    text-transform: uppercase;
 }
 #informacoes{
     background-color:rgb(23,23,23);

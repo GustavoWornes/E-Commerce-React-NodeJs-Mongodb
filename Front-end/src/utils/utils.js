@@ -1,3 +1,4 @@
+import { message ,notification,} from 'antd';
 export const getIdUser =() =>{
     return localStorage.getItem('userId')
 }
@@ -45,6 +46,57 @@ export const setIdProduct = (id) =>{
 export const getIdProduct = () =>{
     return localStorage.getItem('id')
 }
+
+export const setTotal= (value)=>{
+    return localStorage.setItem('total',value)
+}
+export const getTotal = () =>{
+    return localStorage.getItem('total')
+}
+
+export const notificationCart = type => {
+    message.success({
+        content: 'Produto Adicionado no carrinho com sucesso',
+        className: 'custom-class',
+        style: {
+          marginTop: '20vh',
+        },
+        duration:1,
+       
+      });
+    
+  };
+
+  export const notificationRegister = () => {
+    notification.open({
+        
+        message: 'Cadastrado com sucesso!!',
+        description: '',
+      });
+      setTimeout(()=>{
+        window.location.reload()
+    },2000)
+   
+  };
+export const notificationLogout =() =>{
+    message.success('Deslogado com sucesso!');
+    setTimeout(()=>{
+        window.location.reload()
+    },1000)
+    
+  }
+export const notificationUpdate =() =>{
+    notification.info({
+        message: `Sucess`,
+        description:
+          'Usuario atualizado com sucesso!',
+        
+      });
+      setTimeout(()=>{
+        window.location.reload()
+    },2000)
+}
+
 
 
 

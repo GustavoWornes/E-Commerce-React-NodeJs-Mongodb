@@ -2,17 +2,24 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import {api} from "../../Services/services"
 import { CartContext } from "../../contexts/auth";
+import { utils } from "../../utils";
+import "./style.css"
+import "bootstrap"
 const BodyPageProduto = () =>{
   const [product,setProduct] = useState([]);
   const {id} = useParams()
   const cart = useContext(CartContext)
+  const [carrosel,setCarrosel] = useState()
   const add = (product) => () =>{
       cart.addToCart(product)
+      utils.notificationCart()
   }
   useEffect(()=>{
    
     api.get(`/product/${id}`).then(({data}) =>{
       setProduct(data)
+      setCarrosel(data.img_principal)
+
     });
     console.log("Esse é o id",id)
     
@@ -21,30 +28,33 @@ const BodyPageProduto = () =>{
 console.log("Console.log Produto",product)
 console.log("console.log name",product.name)
 
-
     return(
       <main>
         <div className="container">
           <div className="row">
             <div className="col-sm-1">
               <div className="miniproduto">
-                <img id="Img-um" alt={product.name} src={`${product.img_um}`} />
+           
+                <img id="Img-um" alt={product.name} style={{width:'100px'}}
+                src={`${product.img_um}`}  onClick={(event) => setCarrosel(event.target.src)}/>
               </div>
               <div className="miniproduto">
-                <img id="Img-dois" alt={product.name} src={`${product.img_dois}`}/>
+                <img id="Img-dois" alt={product.name}  style={{width:'100px'}}
+                src={`${product.img_dois}`}  onClick={(event) => setCarrosel(event.target.src)}/>
               </div>
               <div className="miniproduto">
-                <img id="Img-tres" alt={product.name} src={`${product.img_tres}`} />
+                <img id="Img-tres" alt={product.name}  style={{width:'100px'}}
+                src={`${product.img_tres}`}  onClick={(event) => setCarrosel(event.target.src)} />
               </div>
               <div className="miniproduto">
-                <img id="Img-quatro" alt={product.name} src={`${product.img_quatro}`}/>
+                <img id="Img-quatro" alt={product.name}  style={{width:'100px'}}
+                src={`${product.img_quatro}`}  onClick={(event) => setCarrosel(event.target.src)}/>
               </div>
-              <div className="miniproduto">
-                <img id="Img-cinco" alt={product.name} src={`${product.img_cinco}`}/>
-              </div>
+              
             </div>
+       
             <div className="col-sm-7">
-              <img  src={`${product.img_principal}`} alt={product.name} id="imagem" />
+              <img  src={`${carrosel}`} alt={product.name} id="imagem" />
             </div>
             {/* <div class="w-100"></div>
                 usado para separar divs

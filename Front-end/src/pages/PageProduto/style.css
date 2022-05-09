@@ -1,6 +1,8 @@
-#image{
-     width:540px;
+#imagem{
+    width:540px;
     height:393px;
+    margin:30px
+    
 }
 
 .texto-descricao{
@@ -31,7 +33,10 @@
     
     
 }
-
+.miniproduto{
+    width: 100px;
+    margin-top: 13px;
+}
 .table{
     background-color: rgb(255, 255, 255);
     border:1px  black;
@@ -58,4 +63,15 @@
 .carousel-inner img{
     max-width: 500px;
     margin-top: 45px;
+}
+
+#qtd{
+    width: 50px;
+    border: 1px solid #424242;
+  border-radius: 50px;
+  color: #424242;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 6px 7px;
+
 }

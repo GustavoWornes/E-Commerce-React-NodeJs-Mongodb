@@ -5,12 +5,12 @@ const express = require ('express');
 const router = express.Router();
 
 
-router.get(`/perfil/?:id`,controller.getUser);
+router.get(`/perfil/:id`,controller.getUser);
 router.get('/index',controller.index);
 router.get('/login',controller.login)
-router.get('/criarConta',controller.criarConta)
+router.get('/criarConta',controller.newAccount)
 
-
+router.put(`/perfil/:id`,controller.putUser);
 router.get("/product/:id",controller.getProduct)
 router.post('/criarConta',controller.createUser);
 router.post('/login',controller.logar)

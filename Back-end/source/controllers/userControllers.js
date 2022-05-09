@@ -19,7 +19,7 @@ const login = async (request,response) =>{
         })
     }
 }
-const criarConta = async (request,response) =>{
+const newAccount = async (request,response) =>{
     try {
         response.render('criarConta')
     } catch (error) {
@@ -33,8 +33,33 @@ const criarConta = async (request,response) =>{
 const getUser = async (request,response) => {
     try{
         const user = await userSchema.findById(request.params.id)
+        
         response.status(200).json(user);
     }catch (error) {
+        response.status(500).json({
+            message: error.message,
+        })
+    }
+}
+const putUser = async (request,response) =>{
+    const hashedPassword = bcrypt.hashSync(request.body.password, 10)
+    /* linha a cima gera um hash com a senha recebida no body da request  */
+    request.body.password = hashedPassword
+    try {
+        const user = await userSchema.findById(request.params.id)
+        user.name=request.body.name;
+        user.sobrenome=request.body.sobrenome;
+        user.email=request.body.email;
+        user.password=request.body.password;
+        user.cep=request.body.cep;
+        user.logradouro=request.body.logradouro;
+        user.bairro=request.body.bairro;
+        user.localidade=request.body.localidade;
+        user.uf=request.body.uf;
+        user.save()
+        response.status(200).json(user);
+        
+    } catch (error) {
         response.status(500).json({
             message: error.message,
         })
@@ -129,9 +154,10 @@ module.exports = {
     getUser,
     createUser,
     login,
-    criarConta,
+    newAccount,
     logar,
-    getProduct
+    getProduct,
+    putUser
   
 }
 

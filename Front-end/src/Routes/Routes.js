@@ -41,7 +41,7 @@ const AppRoutes = () => {
                     <Route path={'/carrinho'} >
                         <Private><PageCarrinho /></Private>
                     </Route>
-                    <Route path={'/perfil'}  search="?:id">
+                    <Route path={'/perfil/:id'}  search="?:id">
                         <Private><Perfil /></Private>
                     </Route>
                     <Route path={'/product/:id'}>

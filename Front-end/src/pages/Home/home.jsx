@@ -16,7 +16,7 @@ const BodyPage = () => {
           {/* Mb = margem bottom */}
         </div>
         <div className="container-fluid text-center">
-          <h1>Produto Destaque</h1>
+          <h1>Produtos Destaque</h1>
         <Link to="/product/6257c0db5cbb58dd34b74d07"><img src={ProdutoDestaque} className="img-fluid" alt="CasalCorrendo Na praia"/></Link> 
        
         <Link to="/product/625b355e32217471a43796d5"><img src={ProdutoDestaque2} className="img-fluid" alt="CasalCorrendo Na praia"/></Link> 
