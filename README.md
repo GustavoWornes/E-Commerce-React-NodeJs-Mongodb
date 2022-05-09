@@ -1,7 +1,8 @@
 # Projeto-E-Commerce
  
  
-Desafio proposto pela !{tera}(https://somostera.com/) onde seria construido um E-Commerce, aonde o Front-end seria feito em React e no Back-end utilizando NodeJs como banco de dados o Mongodb(NoSQL)
+Desafio proposto pela [Tera](https://somostera.com/)
+onde seria construido um E-Commerce, aonde o Front-end seria feito em React e no Back-end utilizando NodeJs como banco de dados o Mongodb(NoSQL), aonde o Back e o front end foram construidos separados por boas práticas.
 
 
 ## Features
