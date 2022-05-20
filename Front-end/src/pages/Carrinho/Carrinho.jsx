@@ -78,7 +78,7 @@ const CarrinhoUser = () => {
                           <input onBlur={changeQtd(key)} type="number" id="qtd" defaultValue={cart.cart[key].quantity} alt={product.name}/>
                         </th>
                         <th className="preco">
-                         <p> <span>{product.precoProduto}</span></p>
+                         <p> <span>{product.precoproduto}</span></p>
 
                         </th>
                         <th className="total">

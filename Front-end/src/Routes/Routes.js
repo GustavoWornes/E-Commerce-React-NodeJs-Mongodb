@@ -15,7 +15,8 @@ import { utils } from "../utils"
 import Perfil from "../pages/Perfil"
 import { CartProvider } from "../contexts/auth"
 import Cadastro from "../pages/Cadastro"
-
+import RegistrationAndChange from '../pages/ADM/CadastroProduto'
+import ProductListing from "../pages/ADM/produto"
 
 const AppRoutes = () => {
     const Private = ({ children }) => {
@@ -43,6 +44,12 @@ const AppRoutes = () => {
                     </Route>
                     <Route path={'/perfil/:id'}  search="?:id">
                         <Private><Perfil /></Private>
+                    </Route>
+                    <Route path={'/adm/descricao/:id'}>
+                        <RegistrationAndChange/>
+                    </Route>
+                    <Route path={'/adm'}>
+                        <ProductListing/>
                     </Route>
                     <Route path={'/product/:id'}>
                         <PageProduto />

@@ -63,7 +63,7 @@ console.log("console.log name",product.name)
             <div className="col-sm-3" id="descricaoProduto">
               <h2 style={{textTransform: 'uppercase'}}>{product.name}</h2>
               <span id="produto-id-1997">
-                <p>R$:{product.precoProduto}</p>
+                <p>R$:{product.preco}</p>
                 
               {/* <pre>
                 {JSON.stringify(cart,null,2)}
@@ -98,27 +98,27 @@ console.log("console.log name",product.name)
             <table className="table table-md">
               <tbody><tr>
                   <th>Terreno</th>
-                  <td>{product.Terreno}</td>
+                  <td>{product.terreno}</td>
                 </tr>
                 <tr>
                   <th>Sistema de amarração</th> 
-                  <td>{product.Sistema_De_Amarracao}</td>
+                  <td>{product.sistema_de_amarracao}</td>
                 </tr>
                 <tr>
                   <th>Peso Aprox.</th>
-                  <td>{product.Peso_Aproximado}</td>
+                  <td>{product.peso_aproximado}</td>
                 </tr>
                 <tr>
                   <th>Impermeabilização</th>
-                  <td>{product.Impermeabilizacao}</td>
+                  <td>{product.impermeabilizacao}</td>
                 </tr>
                 <tr>
                   <th>Drop (mm)</th>
-                  <td>{product.Drop}</td>
+                  <td>{product.drop}</td>
                 </tr>
                 <tr>
                   <th>Ajuste</th>
-                  <td>{product.Ajuste}</td>   
+                  <td>{product.ajuste}</td>   
                 </tr>
               </tbody></table>
           </div>

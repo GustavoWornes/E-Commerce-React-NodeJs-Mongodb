@@ -89,7 +89,7 @@ export const notificationUpdate =() =>{
     notification.info({
         message: `Sucess`,
         description:
-          'Usuario atualizado com sucesso!',
+          'Usuário atualizado com sucesso!',
         
       });
       setTimeout(()=>{
@@ -97,8 +97,21 @@ export const notificationUpdate =() =>{
     },2000)
 }
 
+export const loginError = () =>{
+    message.error('Usuário ou senha invalida!');
 
-
-
+}
+export const deleteProductMessage =() =>{
+    message.success('Deletado com sucesso!');
+    setTimeout(()=>{
+        window.location.reload()
+    },1500)
+}
+export const updatedProduct =() =>{
+    message.success('Atualizado com sucesso!');
+    setTimeout(()=>{
+        window.location.reload()
+    },1500)
+}
 
 
