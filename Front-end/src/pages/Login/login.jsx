@@ -48,7 +48,7 @@ const PageLogin = () => {
     message.loading({ content: 'Loading...', key });
     setTimeout(() => {
       message.success({ content: 'Loaded!', key, duration: 2 });
-      window.location.href = "http://localhost:3000/"
+      window.location.href = "http://maratonistas.s3-website-us-east-1.amazonaws.com/"
     }, 1000);
   };
 

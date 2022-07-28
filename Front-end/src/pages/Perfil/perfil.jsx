@@ -10,6 +10,7 @@ import {
 } from 'antd';
 import { updateUser } from "../../Services/services"
 import 'antd/dist/antd.css';
+/* eslint-disable */
 const { Option } = Select;
 const formItemLayout = {
     labelCol: {
@@ -45,10 +46,11 @@ const tailFormItemLayout = {
 const PerfilUser = () => {
 
     const [user, setUser] = useState([])
+    // eslint-disable-next-line
     const { id } = useParams()
 
     useEffect(() => {
-
+        // eslint-disable-next-line
         api.get(`/perfil/${id}`).then(({ data }) => {
             setUser(data)
         });

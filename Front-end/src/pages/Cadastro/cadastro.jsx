@@ -47,12 +47,15 @@ const FormCadastro = () => {
     const [form] = Form.useForm();
 
     const onFinish = async ({ name, sobrenome, email, password, cep, logradouro, bairro, uf }) => {
+        console.log(form)
+        console.log("passou pelo onfinish")
         return newUser(name, sobrenome, email, password, cep, logradouro, bairro, uf)
     };
 
 
     const newUser = async (name, sobrenome, email, password, cep, logradouro, bairro, uf) => {
         const response = await userRegistration(name, sobrenome, email, password, cep, logradouro, bairro, uf)
+        console.log(response)
         utils.notificationRegister()
     }
     

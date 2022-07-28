@@ -4,7 +4,17 @@
     margin:30px
     
 }
+.Produtos {
+    opacity: 0; /* Esconde no desktop. */
+    height: 0;
+}
 
+@media only screen and (max-width: 360px) {
+    .Produtos {
+        opacity: 1; /* Só aparece no mobile. */
+        height: auto;
+    }
+}
 .texto-descricao{
     /* Texto de descrição do produto abaixo da tabela de informaçoes de fabrica */
     font-family:monospace;

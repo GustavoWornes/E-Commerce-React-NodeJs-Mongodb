@@ -1,6 +1,6 @@
 /* import { useNavigate } from 'react-router-dom' */
 import { createContext, useState, useEffect, useContext } from "react";
-
+/* eslint-disable */
 /* import { useNavigate } from "@reach/router" */
 import {utils} from "../utils/"
 export const CartContext = createContext();

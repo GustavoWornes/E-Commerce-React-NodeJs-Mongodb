@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { useCart,TotalPurchase } from "../../contexts/auth"
+import { useCart/* ,TotalPurchase */ } from "../../contexts/auth"
 import { utils } from "../../utils"
 import "./style.css"
 const CarrinhoUser = () => {
